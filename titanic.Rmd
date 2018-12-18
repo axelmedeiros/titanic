@@ -1,0 +1,27 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+Para calcular a porcentagem dos mortos e vivos do titanic, temos:
+
+```{r}
+
+conjSobreviventes <- subset(gender_submission, gender_submission$Survived == 1)
+conjMortos <- subset(gender_submission, gender_submission$Survived == 0)
+
+
+porcentagemSobreviventes <- (length(conjSobreviventes$PassengerId) / length(gender_submission$PassengerId)) * 100
+porcentagemMortos <- (length(conjMortos$PassengerId) / length(gender_submission$PassengerId)) * 100
+
+sprintf("%3.2f%% sobreviram no Titanic", porcentagemSobreviventes)
+sprintf("%3.2f%% morreram no Titanic", porcentagemMortos)
+
+
+```
+
+
+```{r}
+```
+
