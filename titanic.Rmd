@@ -2,18 +2,36 @@
 title: "R Notebook"
 output: html_notebook
 ---
+```{r}
+# Inserindo bibliotecas
+
+library(tidyverse) #Funções de utilidade gerais para Data Science
+library(rpart) # para arvores de regressão
+library(randomForest) # para Random Forests
+```
+
+
+```{r}
+#lendo dados
+data <- read_csv("data/gender_submission.csv") #Os dado
+train <- read_csv("data/train.csv") #Os dados
+
+```
+
+
+
 
 
 Para calcular a porcentagem dos mortos e vivos do titanic, temos:
-
 ```{r}
 
-conjSobreviventes <- subset(gender_submission, gender_submission$Survived == 1)
-conjMortos <- subset(gender_submission, gender_submission$Survived == 0)
+
+conjSobreviventes <- subset(data, data$Survived == 1)
+conjMortos <- subset(data, data$Survived == 0)
 
 
-porcentagemSobreviventes <- (length(conjSobreviventes$PassengerId) / length(gender_submission$PassengerId)) * 100
-porcentagemMortos <- (length(conjMortos$PassengerId) / length(gender_submission$PassengerId)) * 100
+porcentagemSobreviventes <- (length(conjSobreviventes$PassengerId) / length(data$PassengerId)) * 100
+porcentagemMortos <- (length(conjMortos$PassengerId) / length(data$PassengerId)) * 100
 
 sprintf("%3.2f%% sobreviram no Titanic", porcentagemSobreviventes)
 sprintf("%3.2f%% morreram no Titanic", porcentagemMortos)
@@ -23,5 +41,9 @@ sprintf("%3.2f%% morreram no Titanic", porcentagemMortos)
 
 
 ```{r}
+a <- summary(data)
+print(a)
+# O que é 'Mean' nessa sumarização de dados?
 ```
+
 
