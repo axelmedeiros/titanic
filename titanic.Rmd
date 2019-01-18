@@ -13,8 +13,12 @@ library(randomForest) # para Random Forests
 
 ```{r}
 #lendo dados
-data <- read_csv("data/gender_submission.csv") #Os dado
-train <- read_csv("data/train.csv") #Os dados
+gender_data <- read_csv("data/gender_submission.csv") #Os dado
+data <- read_csv("data/train.csv") #Os dados
+
+
+train_data <- na.omit(data)
+
 
 ```
 
@@ -26,12 +30,12 @@ Para calcular a porcentagem dos mortos e vivos do titanic, temos:
 ```{r}
 
 
-conjSobreviventes <- subset(data, data$Survived == 1)
-conjMortos <- subset(data, data$Survived == 0)
+conjSobreviventes <- subset(gender_data, gender_data$Survived == 1)
+conjMortos <- subset(gender_data, gender_data$Survived == 0)
 
 
-porcentagemSobreviventes <- (length(conjSobreviventes$PassengerId) / length(data$PassengerId)) * 100
-porcentagemMortos <- (length(conjMortos$PassengerId) / length(data$PassengerId)) * 100
+porcentagemSobreviventes <- (length(conjSobreviventes$PassengerId) / length(gender_data$PassengerId)) * 100
+porcentagemMortos <- (length(conjMortos$PassengerId) / length(gender_data$PassengerId)) * 100
 
 sprintf("%3.2f%% sobreviram no Titanic", porcentagemSobreviventes)
 sprintf("%3.2f%% morreram no Titanic", porcentagemMortos)
@@ -41,9 +45,67 @@ sprintf("%3.2f%% morreram no Titanic", porcentagemMortos)
 
 
 ```{r}
-a <- summary(data)
-print(a)
+summary(gender_data)
 # O que é 'Mean' nessa sumarização de dados?
 ```
 
+```{r}
+summary(train_data)
+
+```
+
+##Árvore de regressão
+
+```{r}
+fit <- rpart(Survived ~ Sex + Age, data = train_data)
+printcp(fit)
+plot(fit, uniform = TRUE, main="Árvore de Regressão") #Plota o gráfico da regressão
+text(fit, use.n=TRUE, all=TRUE, cex=.8)
+#text(fit, cex=.9) # Adiciona textos e legendas e os torna 60% maior que o default
+```
+
+## Predição
+Tentativa de predição dos dados:
+
+```{r}
+print(head(train_data))
+
+print(predict(fit, head(train_data)))
+print(head(train_data$Survived))
+```
+
+
+```{r}
+library(modelr)
+mae(model = fit, data = train_data)
+
+#Dividindo os dados
+splitData <- resample_partition(train_data, c(test = 0.3, train = 0.7))
+#Verificando quantos dados ficaram em cada um dos conjuntos
+lapply(splitData, dim)
+```
+
+
+```{r}
+
+fit2 <- rpart(Survived ~ Sex + Age, data = splitData$train)
+mae(model = fit2, data = splitData$test)
+```
+
+
+
+```{r}
+library(randomForest)
+
+final <- na.roughfix(splitData) 
+
+fit.randomForest <- randomForest(as.factor(Survived) ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked,
+                      data=splitData$train, 
+                      importance=TRUE, 
+                      ntree=2000,
+                      prOximity=TRUE,
+                      na.action=na.roughfix)
+
+
+```
 

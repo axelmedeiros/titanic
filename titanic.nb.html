@@ -241,23 +241,45 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBJbnNlcmluZG8gYmlibGlvdGVjYXNcbmxpYnJhcnkodGlkeXZlcnNlKSAjRnVuw6fDtWVzIGRlIHV0aWxpZGFkZSBnZXJhaXMgcGFyYSBEYXRhIFNjaWVuY2VcbmxpYnJhcnkocnBhcnQpICMgcGFyYSBhcnZvcmVzIGRlIHJlZ3Jlc3PDo29cbmxpYnJhcnkocmFuZG9tRm9yZXN0KSAjIHBhcmEgUmFuZG9tIEZvcmVzdHNcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBJbnNlcmluZG8gYmlibGlvdGVjYXNcbmxpYnJhcnkodGlkeXZlcnNlKSAjRnVuw6fDtWVzIGRlIHV0aWxpZGFkZSBnZXJhaXMgcGFyYSBEYXRhIFNjaWVuY2VcbmBgYCJ9 -->
 <pre class="r"><code># Inserindo bibliotecas
-library(tidyverse) #Funções de utilidade gerais para Data Science
-library(rpart) # para arvores de regressão
+library(tidyverse) #Funções de utilidade gerais para Data Science</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXHUwMDFiWzM3beKUgOKUgCBcdTAwMWJbMW1BdHRhY2hpbmcgcGFja2FnZXNcdTAwMWJbMjJtIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2UgMS4yLjEg4pSA4pSAXHUwMDFiWzM5bVxuXHUwMDFiWzM3bVx1MDAxYlszMm3inJRcdTAwMWJbMzdtIFx1MDAxYlszNG1nZ3Bsb3QyXHUwMDFiWzM3bSAzLjEuMCAgICAgXHUwMDFiWzMybeKclFx1MDAxYlszN20gXHUwMDFiWzM0bXB1cnJyICBcdTAwMWJbMzdtIDAuMi41XG5cdTAwMWJbMzJt4pyUXHUwMDFiWzM3bSBcdTAwMWJbMzRtdGliYmxlIFx1MDAxYlszN20gMS40LjIgICAgIFx1MDAxYlszMm3inJRcdTAwMWJbMzdtIFx1MDAxYlszNG1kcGx5ciAgXHUwMDFiWzM3bSAwLjcuOFxuXHUwMDFiWzMybeKclFx1MDAxYlszN20gXHUwMDFiWzM0bXRpZHlyICBcdTAwMWJbMzdtIDAuOC4yICAgICBcdTAwMWJbMzJt4pyUXHUwMDFiWzM3bSBcdTAwMWJbMzRtc3RyaW5nclx1MDAxYlszN20gMS4zLjFcblx1MDAxYlszMm3inJRcdTAwMWJbMzdtIFx1MDAxYlszNG1yZWFkciAgXHUwMDFiWzM3bSAxLjMuMCAgICAgXHUwMDFiWzMybeKclFx1MDAxYlszN20gXHUwMDFiWzM0bWZvcmNhdHNcdTAwMWJbMzdtIDAuMy4wXHUwMDFiWzM5bVxuXHUwMDFiWzM3beKUgOKUgCBcdTAwMWJbMW1Db25mbGljdHNcdTAwMWJbMjJtIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2VfY29uZmxpY3RzKCkg4pSA4pSAXG5cdTAwMWJbMzFt4pyWXHUwMDFiWzM3bSBcdTAwMWJbMzRtZHBseXJcdTAwMWJbMzdtOjpcdTAwMWJbMzJtZmlsdGVyKClcdTAwMWJbMzdtIG1hc2tzIFx1MDAxYlszNG1zdGF0c1x1MDAxYlszN206OmZpbHRlcigpXG5cdTAwMWJbMzFt4pyWXHUwMDFiWzM3bSBcdTAwMWJbMzRtZHBseXJcdTAwMWJbMzdtOjpcdTAwMWJbMzJtbGFnKClcdTAwMWJbMzdtICAgIG1hc2tzIFx1MDAxYlszNG1zdGF0c1x1MDAxYlszN206OmxhZygpXHUwMDFiWzM5bVxuIn0= -->
+<pre><code>[37m── [1mAttaching packages[22m ────────────────────────────────────────────── tidyverse 1.2.1 ──[39m
+[37m[32m✔[37m [34mggplot2[37m 3.1.0     [32m✔[37m [34mpurrr  [37m 0.2.5
+[32m✔[37m [34mtibble [37m 1.4.2     [32m✔[37m [34mdplyr  [37m 0.7.8
+[32m✔[37m [34mtidyr  [37m 0.8.2     [32m✔[37m [34mstringr[37m 1.3.1
+[32m✔[37m [34mreadr  [37m 1.3.0     [32m✔[37m [34mforcats[37m 0.3.0[39m
+[37m── [1mConflicts[22m ───────────────────────────────────────────────── tidyverse_conflicts() ──
+[31m✖[37m [34mdplyr[37m::[32mfilter()[37m masks [34mstats[37m::filter()
+[31m✖[37m [34mdplyr[37m::[32mlag()[37m    masks [34mstats[37m::lag()[39m</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShycGFydCkgIyBwYXJhIGFydm9yZXMgZGUgcmVncmVzc8Ojb1xubGlicmFyeShyYW5kb21Gb3Jlc3QpICMgcGFyYSBSYW5kb20gRm9yZXN0c1xuYGBgIn0= -->
+<pre class="r"><code>library(rpart) # para arvores de regressão
 library(randomForest) # para Random Forests</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gbGlicmFyeShyYW5kb21Gb3Jlc3QpIDogXG4gIHRoZXJlIGlzIG5vIHBhY2thZ2UgY2FsbGVkIOKAmHJhbmRvbUZvcmVzdOKAmVxuIn0= -->
-<pre><code>Error in library(randomForest) : 
-  there is no package called ‘randomForest’</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoicmFuZG9tRm9yZXN0IDQuNi0xNFxuVHlwZSByZk5ld3MoKSB0byBzZWUgbmV3IGZlYXR1cmVzL2NoYW5nZXMvYnVnIGZpeGVzLlxuXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYcmFuZG9tRm9yZXN04oCZXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0IGlzIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6ZHBseXLigJk6XG5cbiAgICBjb21iaW5lXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0IGlzIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6Z2dwbG90MuKAmTpcblxuICAgIG1hcmdpblxuIn0= -->
+<pre><code>randomForest 4.6-14
+Type rfNews() to see new features/changes/bug fixes.
+
+Attaching package: ‘randomForest’
+
+The following object is masked from ‘package:dplyr’:
+
+    combine
+
+The following object is masked from ‘package:ggplot2’:
+
+    margin</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2xlbmRvIGRhZG9zXG5kYXRhIDwtIHJlYWRfY3N2KFwiZGF0YS9nZW5kZXJfc3VibWlzc2lvbi5jc3ZcIikgI09zIGRhZG9cbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2xlbmRvIGRhZG9zXG5nZW5kZXJfZGF0YSA8LSByZWFkX2NzdihcImRhdGEvZ2VuZGVyX3N1Ym1pc3Npb24uY3N2XCIpICNPcyBkYWRvXG5gYGAifQ== -->
 <pre class="r"><code>#lendo dados
-data &lt;- read_csv(&quot;data/gender_submission.csv&quot;) #Os dado</code></pre>
+gender_data &lt;- read_csv(&quot;data/gender_submission.csv&quot;) #Os dado</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICBQYXNzZW5nZXJJZCA9IGNvbF9kb3VibGUoKSxcbiAgU3Vydml2ZWQgPSBjb2xfZG91YmxlKClcbilcbiJ9 -->
 <pre><code>Parsed with column specification:
@@ -266,22 +288,39 @@ cols(
   Survived = col_double()
 )</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHJhaW4gPC0gcmVhZF9jc3YoXCJkYXRhL3RyYWluLmNzdlwiKSAjT3MgZGFkb3NcbmBgYCJ9 -->
-<pre class="r"><code>train &lt;- read_csv(&quot;data/train.csv&quot;) #Os dados</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YSA8LSByZWFkX2NzdihcImRhdGEvdHJhaW4uY3N2XCIpICNPcyBkYWRvc1xuYGBgIn0= -->
+<pre class="r"><code>data &lt;- read_csv(&quot;data/train.csv&quot;) #Os dados</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJybzogJ2RhdGEvdHJhaW4uY3N2JyBkb2VzIG5vdCBleGlzdCBpbiBjdXJyZW50IHdvcmtpbmcgZGlyZWN0b3J5ICgnL2hvbWUvemFydC9ncmFkdWFjYW8vYW5hbGlzZV9kYWRvcycpLlxuIn0= -->
-<pre><code>Erro: 'data/train.csv' does not exist in current working directory ('/home/zart/graduacao/analise_dados').</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICBQYXNzZW5nZXJJZCA9IGNvbF9kb3VibGUoKSxcbiAgU3Vydml2ZWQgPSBjb2xfZG91YmxlKCksXG4gIFBjbGFzcyA9IGNvbF9kb3VibGUoKSxcbiAgTmFtZSA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgU2V4ID0gY29sX2NoYXJhY3RlcigpLFxuICBBZ2UgPSBjb2xfZG91YmxlKCksXG4gIFNpYlNwID0gY29sX2RvdWJsZSgpLFxuICBQYXJjaCA9IGNvbF9kb3VibGUoKSxcbiAgVGlja2V0ID0gY29sX2NoYXJhY3RlcigpLFxuICBGYXJlID0gY29sX2RvdWJsZSgpLFxuICBDYWJpbiA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgRW1iYXJrZWQgPSBjb2xfY2hhcmFjdGVyKClcbilcbiJ9 -->
+<pre><code>Parsed with column specification:
+cols(
+  PassengerId = col_double(),
+  Survived = col_double(),
+  Pclass = col_double(),
+  Name = col_character(),
+  Sex = col_character(),
+  Age = col_double(),
+  SibSp = col_double(),
+  Parch = col_double(),
+  Ticket = col_character(),
+  Fare = col_double(),
+  Cabin = col_character(),
+  Embarked = col_character()
+)</code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHJhaW5fZGF0YSA8LSBuYS5vbWl0KGRhdGEpXG5gYGAifQ== -->
+<pre class="r"><code>train_data &lt;- na.omit(data)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Para calcular a porcentagem dos mortos e vivos do titanic, temos:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29ualNvYnJldml2ZW50ZXMgPC0gc3Vic2V0KGRhdGEsIGRhdGEkU3Vydml2ZWQgPT0gMSlcbmNvbmpNb3J0b3MgPC0gc3Vic2V0KGRhdGEsIGRhdGEkU3Vydml2ZWQgPT0gMClcbnBvcmNlbnRhZ2VtU29icmV2aXZlbnRlcyA8LSAobGVuZ3RoKGNvbmpTb2JyZXZpdmVudGVzJFBhc3NlbmdlcklkKSAvIGxlbmd0aChkYXRhJFBhc3NlbmdlcklkKSkgKiAxMDBcbnBvcmNlbnRhZ2VtTW9ydG9zIDwtIChsZW5ndGgoY29uak1vcnRvcyRQYXNzZW5nZXJJZCkgLyBsZW5ndGgoZGF0YSRQYXNzZW5nZXJJZCkpICogMTAwXG5zcHJpbnRmKFwiJTMuMmYlJSBzb2JyZXZpcmFtIG5vIFRpdGFuaWNcIiwgcG9yY2VudGFnZW1Tb2JyZXZpdmVudGVzKVxuYGBgIn0= -->
-<pre class="r"><code>conjSobreviventes &lt;- subset(data, data$Survived == 1)
-conjMortos &lt;- subset(data, data$Survived == 0)
-porcentagemSobreviventes &lt;- (length(conjSobreviventes$PassengerId) / length(data$PassengerId)) * 100
-porcentagemMortos &lt;- (length(conjMortos$PassengerId) / length(data$PassengerId)) * 100
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29ualNvYnJldml2ZW50ZXMgPC0gc3Vic2V0KGdlbmRlcl9kYXRhLCBnZW5kZXJfZGF0YSRTdXJ2aXZlZCA9PSAxKVxuY29uak1vcnRvcyA8LSBzdWJzZXQoZ2VuZGVyX2RhdGEsIGdlbmRlcl9kYXRhJFN1cnZpdmVkID09IDApXG5wb3JjZW50YWdlbVNvYnJldml2ZW50ZXMgPC0gKGxlbmd0aChjb25qU29icmV2aXZlbnRlcyRQYXNzZW5nZXJJZCkgLyBsZW5ndGgoZ2VuZGVyX2RhdGEkUGFzc2VuZ2VySWQpKSAqIDEwMFxucG9yY2VudGFnZW1Nb3J0b3MgPC0gKGxlbmd0aChjb25qTW9ydG9zJFBhc3NlbmdlcklkKSAvIGxlbmd0aChnZW5kZXJfZGF0YSRQYXNzZW5nZXJJZCkpICogMTAwXG5zcHJpbnRmKFwiJTMuMmYlJSBzb2JyZXZpcmFtIG5vIFRpdGFuaWNcIiwgcG9yY2VudGFnZW1Tb2JyZXZpdmVudGVzKVxuYGBgIn0= -->
+<pre class="r"><code>conjSobreviventes &lt;- subset(gender_data, gender_data$Survived == 1)
+conjMortos &lt;- subset(gender_data, gender_data$Survived == 0)
+porcentagemSobreviventes &lt;- (length(conjSobreviventes$PassengerId) / length(gender_data$PassengerId)) * 100
+porcentagemMortos &lt;- (length(conjMortos$PassengerId) / length(gender_data$PassengerId)) * 100
 sprintf(&quot;%3.2f%% sobreviram no Titanic&quot;, porcentagemSobreviventes)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiMzYuMzYlIHNvYnJldmlyYW0gbm8gVGl0YW5pY1wiXG4ifQ== -->
@@ -297,9 +336,8 @@ sprintf(&quot;%3.2f%% sobreviram no Titanic&quot;, porcentagemSobreviventes)</co
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA8LSBzdW1tYXJ5KGRhdGEpXG5wcmludChhKVxuYGBgIn0= -->
-<pre class="r"><code>a &lt;- summary(data)
-print(a)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShnZW5kZXJfZGF0YSlcbmBgYCJ9 -->
+<pre class="r"><code>summary(gender_data)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiICBQYXNzZW5nZXJJZCAgICAgICAgU3Vydml2ZWQgICAgIFxuIE1pbi4gICA6IDg5Mi4wICAgTWluLiAgIDowLjAwMDAgIFxuIDFzdCBRdS46IDk5Ni4yICAgMXN0IFF1LjowLjAwMDAgIFxuIE1lZGlhbiA6MTEwMC41ICAgTWVkaWFuIDowLjAwMDAgIFxuIE1lYW4gICA6MTEwMC41ICAgTWVhbiAgIDowLjM2MzYgIFxuIDNyZCBRdS46MTIwNC44ICAgM3JkIFF1LjoxLjAwMDAgIFxuIE1heC4gICA6MTMwOS4wICAgTWF4LiAgIDoxLjAwMDAgIFxuIn0= -->
 <pre><code>  PassengerId        Survived     
@@ -316,8 +354,161 @@ print(a)</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeSh0cmFpbl9kYXRhKVxuYGBgIn0= -->
+<pre class="r"><code>summary(train_data)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICBQYXNzZW5nZXJJZCAgICAgICBTdXJ2aXZlZCAgICAgICAgICBQY2xhc3MgICAgICAgICAgTmFtZSAgICAgICAgICBcbiBNaW4uICAgOiAgMi4wICAgTWluLiAgIDowLjAwMDAgICBNaW4uICAgOjEuMDAwICAgTGVuZ3RoOjE4MyAgICAgICAgXG4gMXN0IFF1LjoyNjMuNSAgIDFzdCBRdS46MC4wMDAwICAgMXN0IFF1LjoxLjAwMCAgIENsYXNzIDpjaGFyYWN0ZXIgIFxuIE1lZGlhbiA6NDU3LjAgICBNZWRpYW4gOjEuMDAwMCAgIE1lZGlhbiA6MS4wMDAgICBNb2RlICA6Y2hhcmFjdGVyICBcbiBNZWFuICAgOjQ1NS40ICAgTWVhbiAgIDowLjY3MjEgICBNZWFuICAgOjEuMTkxICAgICAgICAgICAgICAgICAgICAgXG4gM3JkIFF1Ljo2NzYuMCAgIDNyZCBRdS46MS4wMDAwICAgM3JkIFF1LjoxLjAwMCAgICAgICAgICAgICAgICAgICAgIFxuIE1heC4gICA6ODkwLjAgICBNYXguICAgOjEuMDAwMCAgIE1heC4gICA6My4wMDAgICAgICAgICAgICAgICAgICAgICBcbiAgICAgU2V4ICAgICAgICAgICAgICAgICBBZ2UgICAgICAgICAgICBTaWJTcCAgICAgICAgICAgIFBhcmNoICAgICAgIFxuIExlbmd0aDoxODMgICAgICAgICBNaW4uICAgOiAwLjkyICAgTWluLiAgIDowLjAwMDAgICBNaW4uICAgOjAuMDAwMCAgXG4gQ2xhc3MgOmNoYXJhY3RlciAgIDFzdCBRdS46MjQuMDAgICAxc3QgUXUuOjAuMDAwMCAgIDFzdCBRdS46MC4wMDAwICBcbiBNb2RlICA6Y2hhcmFjdGVyICAgTWVkaWFuIDozNi4wMCAgIE1lZGlhbiA6MC4wMDAwICAgTWVkaWFuIDowLjAwMDAgIFxuICAgICAgICAgICAgICAgICAgICBNZWFuICAgOjM1LjY3ICAgTWVhbiAgIDowLjQ2NDUgICBNZWFuICAgOjAuNDc1NCAgXG4gICAgICAgICAgICAgICAgICAgIDNyZCBRdS46NDcuNTAgICAzcmQgUXUuOjEuMDAwMCAgIDNyZCBRdS46MS4wMDAwICBcbiAgICAgICAgICAgICAgICAgICAgTWF4LiAgIDo4MC4wMCAgIE1heC4gICA6My4wMDAwICAgTWF4LiAgIDo0LjAwMDAgIFxuICAgIFRpY2tldCAgICAgICAgICAgICAgIEZhcmUgICAgICAgICAgIENhYmluICAgICAgICAgICAgIEVtYmFya2VkICAgICAgICBcbiBMZW5ndGg6MTgzICAgICAgICAgTWluLiAgIDogIDAuMDAgICBMZW5ndGg6MTgzICAgICAgICAgTGVuZ3RoOjE4MyAgICAgICAgXG4gQ2xhc3MgOmNoYXJhY3RlciAgIDFzdCBRdS46IDI5LjcwICAgQ2xhc3MgOmNoYXJhY3RlciAgIENsYXNzIDpjaGFyYWN0ZXIgIFxuIE1vZGUgIDpjaGFyYWN0ZXIgICBNZWRpYW4gOiA1Ny4wMCAgIE1vZGUgIDpjaGFyYWN0ZXIgICBNb2RlICA6Y2hhcmFjdGVyICBcbiAgICAgICAgICAgICAgICAgICAgTWVhbiAgIDogNzguNjggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgIDNyZCBRdS46IDkwLjAwICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgICBNYXguICAgOjUxMi4zMyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiJ9 -->
+<pre><code>  PassengerId       Survived          Pclass          Name          
+ Min.   :  2.0   Min.   :0.0000   Min.   :1.000   Length:183        
+ 1st Qu.:263.5   1st Qu.:0.0000   1st Qu.:1.000   Class :character  
+ Median :457.0   Median :1.0000   Median :1.000   Mode  :character  
+ Mean   :455.4   Mean   :0.6721   Mean   :1.191                     
+ 3rd Qu.:676.0   3rd Qu.:1.0000   3rd Qu.:1.000                     
+ Max.   :890.0   Max.   :1.0000   Max.   :3.000                     
+     Sex                 Age            SibSp            Parch       
+ Length:183         Min.   : 0.92   Min.   :0.0000   Min.   :0.0000  
+ Class :character   1st Qu.:24.00   1st Qu.:0.0000   1st Qu.:0.0000  
+ Mode  :character   Median :36.00   Median :0.0000   Median :0.0000  
+                    Mean   :35.67   Mean   :0.4645   Mean   :0.4754  
+                    3rd Qu.:47.50   3rd Qu.:1.0000   3rd Qu.:1.0000  
+                    Max.   :80.00   Max.   :3.0000   Max.   :4.0000  
+    Ticket               Fare           Cabin             Embarked        
+ Length:183         Min.   :  0.00   Length:183         Length:183        
+ Class :character   1st Qu.: 29.70   Class :character   Class :character  
+ Mode  :character   Median : 57.00   Mode  :character   Mode  :character  
+                    Mean   : 78.68                                        
+                    3rd Qu.: 90.00                                        
+                    Max.   :512.33                                        </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<div id="arvore-de-regressao" class="section level2">
+<h2>Árvore de regressão</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0IDwtIHJwYXJ0KFN1cnZpdmVkIH4gU2V4ICsgQWdlLCBkYXRhID0gdHJhaW5fZGF0YSlcbnByaW50Y3AoZml0KVxuYGBgIn0= -->
+<pre class="r"><code>fit &lt;- rpart(Survived ~ Sex + Age, data = train_data)
+printcp(fit)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5SZWdyZXNzaW9uIHRyZWU6XG5ycGFydChmb3JtdWxhID0gU3Vydml2ZWQgfiBTZXggKyBBZ2UsIGRhdGEgPSB0cmFpbl9kYXRhKVxuXG5WYXJpYWJsZXMgYWN0dWFsbHkgdXNlZCBpbiB0cmVlIGNvbnN0cnVjdGlvbjpcblsxXSBBZ2UgU2V4XG5cblJvb3Qgbm9kZSBlcnJvcjogNDAuMzI4LzE4MyA9IDAuMjIwMzdcblxubj0gMTgzIFxuXG4gICAgICAgIENQIG5zcGxpdCByZWwgZXJyb3IgIHhlcnJvciAgICAgeHN0ZFxuMSAwLjI4MzQ2OSAgICAgIDAgICAxLjAwMDAwIDEuMDA4MTIgMC4wNTQ3MTFcbjIgMC4wNjk5ODkgICAgICAxICAgMC43MTY1MyAwLjcyNTYxIDAuMDYyMzE5XG4zIDAuMDI5MDg1ICAgICAgMiAgIDAuNjQ2NTQgMC43MDgyNyAwLjA2NzkyMVxuNCAwLjAxNDk0MCAgICAgIDYgICAwLjUzMDIwIDAuNzM3MTUgMC4wODAwMDVcbjUgMC4wMTAwMDAgICAgICA3ICAgMC41MTUyNiAwLjY3MTQwIDAuMDc4NDMxXG4ifQ== -->
+<pre><code>
+Regression tree:
+rpart(formula = Survived ~ Sex + Age, data = train_data)
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KIyBJbnNlcmluZG8gYmlibGlvdGVjYXMKCmxpYnJhcnkodGlkeXZlcnNlKSAjRnVuw6fDtWVzIGRlIHV0aWxpZGFkZSBnZXJhaXMgcGFyYSBEYXRhIFNjaWVuY2UKbGlicmFyeShycGFydCkgIyBwYXJhIGFydm9yZXMgZGUgcmVncmVzc8OjbwpsaWJyYXJ5KHJhbmRvbUZvcmVzdCkgIyBwYXJhIFJhbmRvbSBGb3Jlc3RzCmBgYAoKCmBgYHtyfQojbGVuZG8gZGFkb3MKZGF0YSA8LSByZWFkX2NzdigiZGF0YS9nZW5kZXJfc3VibWlzc2lvbi5jc3YiKSAjT3MgZGFkbwp0cmFpbiA8LSByZWFkX2NzdigiZGF0YS90cmFpbi5jc3YiKSAjT3MgZGFkb3MKCmBgYAoKCgoKClBhcmEgY2FsY3VsYXIgYSBwb3JjZW50YWdlbSBkb3MgbW9ydG9zIGUgdml2b3MgZG8gdGl0YW5pYywgdGVtb3M6CmBgYHtyfQoKCmNvbmpTb2JyZXZpdmVudGVzIDwtIHN1YnNldChkYXRhLCBkYXRhJFN1cnZpdmVkID09IDEpCmNvbmpNb3J0b3MgPC0gc3Vic2V0KGRhdGEsIGRhdGEkU3Vydml2ZWQgPT0gMCkKCgpwb3JjZW50YWdlbVNvYnJldml2ZW50ZXMgPC0gKGxlbmd0aChjb25qU29icmV2aXZlbnRlcyRQYXNzZW5nZXJJZCkgLyBsZW5ndGgoZGF0YSRQYXNzZW5nZXJJZCkpICogMTAwCnBvcmNlbnRhZ2VtTW9ydG9zIDwtIChsZW5ndGgoY29uak1vcnRvcyRQYXNzZW5nZXJJZCkgLyBsZW5ndGgoZGF0YSRQYXNzZW5nZXJJZCkpICogMTAwCgpzcHJpbnRmKCIlMy4yZiUlIHNvYnJldmlyYW0gbm8gVGl0YW5pYyIsIHBvcmNlbnRhZ2VtU29icmV2aXZlbnRlcykKc3ByaW50ZigiJTMuMmYlJSBtb3JyZXJhbSBubyBUaXRhbmljIiwgcG9yY2VudGFnZW1Nb3J0b3MpCgoKYGBgCgoKYGBge3J9CmEgPC0gc3VtbWFyeShkYXRhKQpwcmludChhKQojIE8gcXVlIMOpICdNZWFuJyBuZXNzYSBzdW1hcml6YcOnw6NvIGRlIGRhZG9zPwpgYGAKCgo=</div>
+Variables actually used in tree construction:
+[1] Age Sex
+
+Root node error: 40.328/183 = 0.22037
+
+n= 183 
+
+        CP nsplit rel error  xerror     xstd
+1 0.283469      0   1.00000 1.00812 0.054711
+2 0.069989      1   0.71653 0.72561 0.062319
+3 0.029085      2   0.64654 0.70827 0.067921
+4 0.014940      6   0.53020 0.73715 0.080005
+5 0.010000      7   0.51526 0.67140 0.078431</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChmaXQsIHVuaWZvcm0gPSBUUlVFLCBtYWluPVwiw4Fydm9yZSBkZSBSZWdyZXNzw6NvXCIpICNQbG90YSBvIGdyw6FmaWNvIGRhIHJlZ3Jlc3PDo29cbnRleHQoZml0LCB1c2Uubj1UUlVFLCBhbGw9VFJVRSwgY2V4PS44KVxuYGBgIn0= -->
+<pre class="r"><code>plot(fit, uniform = TRUE, main=&quot;Árvore de Regressão&quot;) #Plota o gráfico da regressão
+text(fit, use.n=TRUE, all=TRUE, cex=.8)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-plot-begin eyJjb25kaXRpb25zIjpbXSwiaGVpZ2h0IjozOTEuMjIzNywic2l6ZV9iZWhhdmlvciI6MCwid2lkdGgiOjYzM30= -->
+<p><img src="data:image/png;base64,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" /></p>
+<!-- rnb-plot-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI3RleHQoZml0LCBjZXg9LjkpICMgQWRpY2lvbmEgdGV4dG9zIGUgbGVnZW5kYXMgZSBvcyB0b3JuYSA2MCUgbWFpb3IgcXVlIG8gZGVmYXVsdFxuYGBgIn0= -->
+<pre class="r"><code>#text(fit, cex=.9) # Adiciona textos e legendas e os torna 60% maior que o default</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="predicao" class="section level2">
+<h2>Predição</h2>
+<p>Tentativa de predição dos dados:</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQoaGVhZCh0cmFpbl9kYXRhKSlcbmBgYCJ9 -->
+<pre class="r"><code>print(head(train_data))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6MTIsIm5yb3ciOjZ9LCJyZGYiOiJINHNJQUFBQUFBQUFBNVZVelc3VFFCRGUvTGx0NkE4U1FuQkFZcm1nZ3Rxb2FSSTNRVWk0Y1J0b2FKQ3BlK2gxNDJ5U1ZaeDFXZHR0dzZrUHdKa1g0Y3did0lVSFFadzVOS3pqblRTMVVnUWpPZlA3emM0M1h1ZG83MlE3ZjVKSENLVlJKcHRGNll3MHMybjVrMEpadEJUcEM0UXk5NlN4TEo5VitXZ0dpc1c0cS9RanBaOHF2YTYwamtBbXVGZS9ZZ2MwU0RJK2s1K0xBMjBzSnZ6cmx0RmttaUpRTXNNaDR6MS9BN2VFWDhCTnI4OXhYWkNPUzBkNHZlRjZnbktIeWdqcjlYeDgzQ2NqS3A0cDZFWWpEQVIxWFFwWTRud0lxWS9mVUJMMDhmb2hjMGU0UlViWW90UUZ6SU9XWXhJUjlFY1Jwb0NQMmRDVERtNnE5R09iOEk0ZkNHOG84OHlYVFZ0RTlFSXFXRUR4VVJpb3NvZDFqM041TWhUdHUrd2phZE9nci9MMzY1VDZra0Y4eUNFNW43QklNTmU2ZEVoY090ZkwzcHFaVndkdjNsU2IzcjJNOWR2RVRXaEIvdi9lL0J5WjRHNUwvZ1UzeTMvUk1uRnhwMUtyQWJOaXNWVGRLaWt2Vjl3cDYrQXNXQmF1VmNxemxUdFZTR3JiNWFwZXEwNjM4UDdIazg5SFgxOGF6VS9mcEh3M0RuNTJJekcydnBRaU1WNm8rUE81VTJYTWFnV1dheGEzNFpETWZsbFhadnExZmwwd25UZXpWOUVUclZJbUdQWS9HVGUvN0J3blErcXJsc3NxZU1jaXZrOTVqNHFERHF6UkRzVVpPNlBnYTVianlpSVk4WjNzQWlQYTlBTE0zUjVFY3pacjI2ZmdXRVE0Y0l1MVkrWU1LTno1YklPSUtjWWtiY1poZ1AxaG00aUJIT0FtZ1NYaG5SZUF4RXEwdUV2NU14NlBmeWVaeGdQSFRDR1k3NUNBRkxvaUdoK2hxd1Jrd1RzTm1NY2xLQjM5K2VVUzRKUklCTlpDSGszUzJYVDZJUjlzUnBjbFAwbkhzcUpzYmNaZWpvOU1qMVdySEd4RnJwL3g2U1pjK2QyN3lsbVZqQ2VFQzZlQ2NWaGNYa2I5UXVBRkJPcnlqdWRDWk1JTlhmMEJheldZYk9vRkFBQT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["PassengerId"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Survived"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Pclass"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Name"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Sex"],"name":[5],"type":["chr"],"align":["left"]},{"label":["Age"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["SibSp"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Parch"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Ticket"],"name":[9],"type":["chr"],"align":["left"]},{"label":["Fare"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Cabin"],"name":[11],"type":["chr"],"align":["left"]},{"label":["Embarked"],"name":[12],"type":["chr"],"align":["left"]}],"data":[{"1":"2","2":"1","3":"1","4":"Cumings, Mrs. John Bradley (Florence Briggs Thayer)","5":"female","6":"38","7":"1","8":"0","9":"PC 17599","10":"71.2833","11":"C85","12":"C"},{"1":"4","2":"1","3":"1","4":"Futrelle, Mrs. Jacques Heath (Lily May Peel)","5":"female","6":"35","7":"1","8":"0","9":"113803","10":"53.1000","11":"C123","12":"S"},{"1":"7","2":"0","3":"1","4":"McCarthy, Mr. Timothy J","5":"male","6":"54","7":"0","8":"0","9":"17463","10":"51.8625","11":"E46","12":"S"},{"1":"11","2":"1","3":"3","4":"Sandstrom, Miss. Marguerite Rut","5":"female","6":"4","7":"1","8":"1","9":"PP 9549","10":"16.7000","11":"G6","12":"S"},{"1":"12","2":"1","3":"1","4":"Bonnell, Miss. Elizabeth","5":"female","6":"58","7":"0","8":"0","9":"113783","10":"26.5500","11":"C103","12":"S"},{"1":"22","2":"1","3":"2","4":"Beesley, Mr. Lawrence","5":"male","6":"34","7":"0","8":"0","9":"248698","10":"13.0000","11":"D56","12":"S"}],"options":{"columns":{"min":{},"max":[10],"total":[12]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQocHJlZGljdChmaXQsIGhlYWQodHJhaW5fZGF0YSkpKVxuYGBgIn0= -->
+<pre class="r"><code>print(predict(fit, head(train_data)))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAxICAgICAgICAgMiAgICAgICAgIDMgICAgICAgICA0ICAgICAgICAgNSAgICAgICAgIDYgXG4wLjkzMTgxODIgMC45MzE4MTgyIDAuMTc2NDcwNiAwLjkzMTgxODIgMC45MzE4MTgyIDAuNDgzODcxMCBcbiJ9 -->
+<pre><code>        1         2         3         4         5         6 
+0.9318182 0.9318182 0.1764706 0.9318182 0.9318182 0.4838710 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQoaGVhZCh0cmFpbl9kYXRhJFN1cnZpdmVkKSlcbmBgYCJ9 -->
+<pre class="r"><code>print(head(train_data$Survived))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEgMSAwIDEgMSAxXG4ifQ== -->
+<pre><code>[1] 1 1 0 1 1 1</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShtb2RlbHIpXG5tYWUobW9kZWwgPSBmaXQsIGRhdGEgPSB0cmFpbl9kYXRhKVxuYGBgIn0= -->
+<pre class="r"><code>library(modelr)
+mae(model = fit, data = train_data)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuMjI3MDk3N1xuIn0= -->
+<pre><code>[1] 0.2270977</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0RpdmlkaW5kbyBvcyBkYWRvc1xuc3BsaXREYXRhIDwtIHJlc2FtcGxlX3BhcnRpdGlvbih0cmFpbl9kYXRhLCBjKHRlc3QgPSAwLjMsIHRyYWluID0gMC43KSlcbiNWZXJpZmljYW5kbyBxdWFudG9zIGRhZG9zIGZpY2FyYW0gZW0gY2FkYSB1bSBkb3MgY29uanVudG9zXG5sYXBwbHkoc3BsaXREYXRhLCBkaW0pXG5gYGAifQ== -->
+<pre class="r"><code>#Dividindo os dados
+splitData &lt;- resample_partition(train_data, c(test = 0.3, train = 0.7))
+#Verificando quantos dados ficaram em cada um dos conjuntos
+lapply(splitData, dim)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJHRlc3RcblsxXSA1NCAxMlxuXG4kdHJhaW5cblsxXSAxMjkgIDEyXG4ifQ== -->
+<pre><code>$test
+[1] 54 12
+
+$train
+[1] 129  12</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZml0MiA8LSBycGFydChTdXJ2aXZlZCB+IFNleCArIEFnZSwgZGF0YSA9IHNwbGl0RGF0YSR0cmFpbilcbm1hZShtb2RlbCA9IGZpdDIsIGRhdGEgPSBzcGxpdERhdGEkdGVzdClcbmBgYCJ9 -->
+<pre class="r"><code>fit2 &lt;- rpart(Survived ~ Sex + Age, data = splitData$train)
+mae(model = fit2, data = splitData$test)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuMjg2NjYyNVxuIn0= -->
+<pre><code>[1] 0.2866625</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShyYW5kb21Gb3Jlc3QpXG5maXQucmFuZG9tRm9yZXN0IDwtIHJhbmRvbUZvcmVzdChhcy5mYWN0b3IoU3Vydml2ZWQpIH4gUGNsYXNzICsgU2V4ICsgQWdlICsgU2liU3AgKyBQYXJjaCArIEZhcmUgKyBFbWJhcmtlZCxcbiAgICAgICAgICAgICAgICAgICAgICBkYXRhPXNwbGl0RGF0YSR0cmFpbiwgXG4gICAgICAgICAgICAgICAgICAgICAgaW1wb3J0YW5jZT1UUlVFLCBcbiAgICAgICAgICAgICAgICAgICAgICBudHJlZT0yMDAwLFxuICAgICAgICAgICAgICAgICAgICAgIHByT3hpbWl0eT1UUlVFLFxuICAgICAgICAgICAgICAgICAgICAgIG5hLmFjdGlvbj1uYS5yb3VnaGZpeClcbmBgYCJ9 -->
+<pre class="r"><code>library(randomForest)
+fit.randomForest &lt;- randomForest(as.factor(Survived) ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked,
+                      data=splitData$train, 
+                      importance=TRUE, 
+                      ntree=2000,
+                      prOximity=TRUE,
+                      na.action=na.roughfix)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gbmEucm91Z2hmaXguZGF0YS5mcmFtZShsaXN0KGBhcy5mYWN0b3IoU3Vydml2ZWQpYCA9IGMoMkwsIDFMLCAgOiBcbiAgbmEucm91Z2hmaXggb25seSB3b3JrcyBmb3IgbnVtZXJpYyBvciBmYWN0b3JcbiJ9 -->
+<pre><code>Error in na.roughfix.data.frame(list(`as.factor(Survived)` = c(2L, 1L,  : 
+  na.roughfix only works for numeric or factor</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+</div>
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KIyBJbnNlcmluZG8gYmlibGlvdGVjYXMKCmxpYnJhcnkodGlkeXZlcnNlKSAjRnVuw6fDtWVzIGRlIHV0aWxpZGFkZSBnZXJhaXMgcGFyYSBEYXRhIFNjaWVuY2UKbGlicmFyeShycGFydCkgIyBwYXJhIGFydm9yZXMgZGUgcmVncmVzc8OjbwpsaWJyYXJ5KHJhbmRvbUZvcmVzdCkgIyBwYXJhIFJhbmRvbSBGb3Jlc3RzCmBgYAoKCmBgYHtyfQojbGVuZG8gZGFkb3MKZ2VuZGVyX2RhdGEgPC0gcmVhZF9jc3YoImRhdGEvZ2VuZGVyX3N1Ym1pc3Npb24uY3N2IikgI09zIGRhZG8KZGF0YSA8LSByZWFkX2NzdigiZGF0YS90cmFpbi5jc3YiKSAjT3MgZGFkb3MKCgp0cmFpbl9kYXRhIDwtIG5hLm9taXQoZGF0YSkKCgpgYGAKCgoKCgpQYXJhIGNhbGN1bGFyIGEgcG9yY2VudGFnZW0gZG9zIG1vcnRvcyBlIHZpdm9zIGRvIHRpdGFuaWMsIHRlbW9zOgpgYGB7cn0KCgpjb25qU29icmV2aXZlbnRlcyA8LSBzdWJzZXQoZ2VuZGVyX2RhdGEsIGdlbmRlcl9kYXRhJFN1cnZpdmVkID09IDEpCmNvbmpNb3J0b3MgPC0gc3Vic2V0KGdlbmRlcl9kYXRhLCBnZW5kZXJfZGF0YSRTdXJ2aXZlZCA9PSAwKQoKCnBvcmNlbnRhZ2VtU29icmV2aXZlbnRlcyA8LSAobGVuZ3RoKGNvbmpTb2JyZXZpdmVudGVzJFBhc3NlbmdlcklkKSAvIGxlbmd0aChnZW5kZXJfZGF0YSRQYXNzZW5nZXJJZCkpICogMTAwCnBvcmNlbnRhZ2VtTW9ydG9zIDwtIChsZW5ndGgoY29uak1vcnRvcyRQYXNzZW5nZXJJZCkgLyBsZW5ndGgoZ2VuZGVyX2RhdGEkUGFzc2VuZ2VySWQpKSAqIDEwMAoKc3ByaW50ZigiJTMuMmYlJSBzb2JyZXZpcmFtIG5vIFRpdGFuaWMiLCBwb3JjZW50YWdlbVNvYnJldml2ZW50ZXMpCnNwcmludGYoIiUzLjJmJSUgbW9ycmVyYW0gbm8gVGl0YW5pYyIsIHBvcmNlbnRhZ2VtTW9ydG9zKQoKCmBgYAoKCmBgYHtyfQpzdW1tYXJ5KGdlbmRlcl9kYXRhKQojIE8gcXVlIMOpICdNZWFuJyBuZXNzYSBzdW1hcml6YcOnw6NvIGRlIGRhZG9zPwpgYGAKCmBgYHtyfQpzdW1tYXJ5KHRyYWluX2RhdGEpCgpgYGAKCiMjw4Fydm9yZSBkZSByZWdyZXNzw6NvCgpgYGB7cn0KZml0IDwtIHJwYXJ0KFN1cnZpdmVkIH4gU2V4ICsgQWdlLCBkYXRhID0gdHJhaW5fZGF0YSkKcHJpbnRjcChmaXQpCnBsb3QoZml0LCB1bmlmb3JtID0gVFJVRSwgbWFpbj0iw4Fydm9yZSBkZSBSZWdyZXNzw6NvIikgI1Bsb3RhIG8gZ3LDoWZpY28gZGEgcmVncmVzc8Ojbwp0ZXh0KGZpdCwgdXNlLm49VFJVRSwgYWxsPVRSVUUsIGNleD0uOCkKI3RleHQoZml0LCBjZXg9LjkpICMgQWRpY2lvbmEgdGV4dG9zIGUgbGVnZW5kYXMgZSBvcyB0b3JuYSA2MCUgbWFpb3IgcXVlIG8gZGVmYXVsdApgYGAKCiMjIFByZWRpw6fDo28KVGVudGF0aXZhIGRlIHByZWRpw6fDo28gZG9zIGRhZG9zOgoKYGBge3J9CnByaW50KGhlYWQodHJhaW5fZGF0YSkpCgpwcmludChwcmVkaWN0KGZpdCwgaGVhZCh0cmFpbl9kYXRhKSkpCnByaW50KGhlYWQodHJhaW5fZGF0YSRTdXJ2aXZlZCkpCmBgYAoKCmBgYHtyfQpsaWJyYXJ5KG1vZGVscikKbWFlKG1vZGVsID0gZml0LCBkYXRhID0gdHJhaW5fZGF0YSkKCiNEaXZpZGluZG8gb3MgZGFkb3MKc3BsaXREYXRhIDwtIHJlc2FtcGxlX3BhcnRpdGlvbih0cmFpbl9kYXRhLCBjKHRlc3QgPSAwLjMsIHRyYWluID0gMC43KSkKI1ZlcmlmaWNhbmRvIHF1YW50b3MgZGFkb3MgZmljYXJhbSBlbSBjYWRhIHVtIGRvcyBjb25qdW50b3MKbGFwcGx5KHNwbGl0RGF0YSwgZGltKQpgYGAKCgpgYGB7cn0KCmZpdDIgPC0gcnBhcnQoU3Vydml2ZWQgfiBTZXggKyBBZ2UsIGRhdGEgPSBzcGxpdERhdGEkdHJhaW4pCm1hZShtb2RlbCA9IGZpdDIsIGRhdGEgPSBzcGxpdERhdGEkdGVzdCkKYGBgCgoKCmBgYHtyfQpsaWJyYXJ5KHJhbmRvbUZvcmVzdCkKCmZpbmFsIDwtIG5hLnJvdWdoZml4KHNwbGl0RGF0YSkgCgpmaXQucmFuZG9tRm9yZXN0IDwtIHJhbmRvbUZvcmVzdChhcy5mYWN0b3IoU3Vydml2ZWQpIH4gUGNsYXNzICsgU2V4ICsgQWdlICsgU2liU3AgKyBQYXJjaCArIEZhcmUgKyBFbWJhcmtlZCwKICAgICAgICAgICAgICAgICAgICAgIGRhdGE9c3BsaXREYXRhJHRyYWluLCAKICAgICAgICAgICAgICAgICAgICAgIGltcG9ydGFuY2U9VFJVRSwgCiAgICAgICAgICAgICAgICAgICAgICBudHJlZT0yMDAwLAogICAgICAgICAgICAgICAgICAgICAgcHJPeGltaXR5PVRSVUUsCiAgICAgICAgICAgICAgICAgICAgICBuYS5hY3Rpb249bmEucm91Z2hmaXgpCgoKYGBgCgo=</div>
 
 
 
