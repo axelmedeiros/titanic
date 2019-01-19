@@ -27,7 +27,7 @@ train <- read_csv("data/train.csv") #Os dados
 
 ```{r}
 fit <- rpart(Survived ~ Pclass + Sex + Age + SibSp +
-             Parch + Fare + Embarked, data = train)
+             Parch + Fare + Embarked, data = train, method = 'class')
 ```
 
 
@@ -37,7 +37,7 @@ fancyRpartPlot ( fit )
 
 
 ```{r}
-Prediction  <- predict (fit ,   test, type = 'class') 
+Prediction  <- predict (fit ,   test, type = 'class')  #Realizando predição nos dados teste
 submit  <- data.frame (PassengerId =  test $ PassengerId , Survived = Prediction) 
 write.csv (submit , file =  "myfirstdtree.csv", row.names  =  FALSE) 
 ```
