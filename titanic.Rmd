@@ -8,61 +8,36 @@ output: html_notebook
 library(tidyverse) #Funções de utilidade gerais para Data Science
 library(rpart) # para arvores de regressão
 library(randomForest) # para Random Forests
+
+#Para melhorar a vizualização da árvore de regressão
+library (rattle) 
+library (RColorBrewer) 
+
 ```
-
-
 
 
 ```{r}
 #lendo dados
 test <- read_csv("data/test.csv") #Os dado
 train <- read_csv("data/train.csv") #Os dados
-
-
 ```
 
-Analisando as informações:
+
+# Árvore de regressão
 
 ```{r}
-#relacioanda os dados sexo e da sobrevivencia
-prop.table(table(train$Sex, train$Survived), 1) # 1 para linha, 2 para coluna
-```
-
-Logo, concluimos que boa parta das mulheres sobreviveram, logo, ao completando os dados, temos;
-
-```{r}
-  #test$Survived <- rep(0, 418) # Adiciona uma nova coluna nos dados
-  test$Survived <-  0 
-  test$Survived[test$Sex == 'female'] <-  1 
+fit <- rpart(Survived ~ Pclass + Sex + Age + SibSp +
+             Parch + Fare + Embarked, data = train)
 ```
 
 
 ```{r}
-aggregate (Survived ~  Child  + Sex , data = train , FUN = 
-             function(x) {
-               sum(x) / length(x)
-             }) 
+fancyRpartPlot ( fit ) 
 ```
 
 
 ```{r}
-
+Prediction  <- predict (fit ,   test, type = 'class') 
+submit  <- data.frame (PassengerId =  test $ PassengerId , Survived = Prediction) 
+write.csv (submit , file =  "myfirstdtree.csv", row.names  =  FALSE) 
 ```
-
-
-
-```{r}
-train$Child <- 0
-train$Child[ train$Age < 18 ] <- 1
-```
-
-
-
-
-Para salvar o csv, temos:
-
-```{r}
-  submit <- data.frame(PassengerId = test$PassengerId, Survived = test$Survived)
-  write.csv(submit, file = "theyallperish.csv", row.names = FALSE)
-```
-
