@@ -343,6 +343,35 @@ cols(
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWdncmVnYXRlIChTdXJ2aXZlZCB+ICBDaGlsZCAgKyBTZXggLCBkYXRhID0gdHJhaW4gLCBGVU4gPSBcbiAgICAgICAgICAgICBmdW5jdGlvbih4KSB7XG4gICAgICAgICAgICAgICBzdW0oeCkgLyBsZW5ndGgoeClcbiAgICAgICAgICAgICB9KSBcbmBgYCJ9 -->
+<pre class="r"><code>aggregate (Survived ~  Child  + Sex , data = train , FUN = 
+             function(x) {
+               sum(x) / length(x)
+             }) </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MywibnJvdyI6NH0sInJkZiI6Ikg0c0lBQUFBQUFBQUF3dHlpVERpaXVCaVlHQmdZbUJtWVdGZ1lnWXlXWmlBQkNNREN3TW5pSzVnWUdBV0JqSkFNbndnV1FZb3NQL0FnQUtRK0FKZ2RSQUQyTkpTY3hOelVySHlXRERZVUR2c1g0anZ1RnJmV0dQL1RQcHQ0cjVyTXZaSFRROWZtbmRGeXY1bW9sVDFOTUVWYUk1a3pVdk1UUzJHV3N3TUUzVE95TXhKZ1hLWWcxTXJvRXlPNE5LaXNzeXkxQlEwUXppTDhzdjFZQWJ4Z29La0FlSWJGblRia25NU2kyRzJ3UVM1VWhKTEV2WFNpb0Q2Z2J4L2FGclk4d3RLTXZQemdKcVlRR0hKaXFhWnNRaE5nTDgwRCtTU0ZOM2tqTks4YkYwemtBVmdhUWpnaGJKWmtOak1FQ3VaL2tPTllvV0ZlR3BlZW1ZZUxKUlpjeEtUVW5PZ0hENmdqOEVlMWlzb3lzd3JnZmtFS0Zxc1Y1SmZrZ2hUeDVXY253TVRBZnVONFI4QTZlVklRamtDQUFBPSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Child"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Sex"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Survived"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"0","2":"female","3":"0.7528958"},{"1":"1","2":"female","3":"0.6909091"},{"1":"0","2":"male","3":"0.1657033"},{"1":"1","2":"male","3":"0.3965517"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHJhaW4kQ2hpbGQgPC0gMFxudHJhaW4kQ2hpbGRbIHRyYWluJEFnZSA8IDE4IF0gPC0gMVxuYGBgIn0= -->
+<pre class="r"><code>train$Child &lt;- 0
+train$Child[ train$Age &lt; 18 ] &lt;- 1</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <p>Para salvar o csv, temos:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -357,7 +386,7 @@ cols(
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KIyBJbnNlcmluZG8gYmlibGlvdGVjYXMKCmxpYnJhcnkodGlkeXZlcnNlKSAjRnVuw6fDtWVzIGRlIHV0aWxpZGFkZSBnZXJhaXMgcGFyYSBEYXRhIFNjaWVuY2UKbGlicmFyeShycGFydCkgIyBwYXJhIGFydm9yZXMgZGUgcmVncmVzc8OjbwpsaWJyYXJ5KHJhbmRvbUZvcmVzdCkgIyBwYXJhIFJhbmRvbSBGb3Jlc3RzCmBgYAoKCgoKYGBge3J9CiNsZW5kbyBkYWRvcwp0ZXN0IDwtIHJlYWRfY3N2KCJkYXRhL3Rlc3QuY3N2IikgI09zIGRhZG8KdHJhaW4gPC0gcmVhZF9jc3YoImRhdGEvdHJhaW4uY3N2IikgI09zIGRhZG9zCgoKYGBgCgpBbmFsaXNhbmRvIGFzIGluZm9ybWHDp8O1ZXM6CgpgYGB7cn0KI3JlbGFjaW9hbmRhIG9zIGRhZG9zIHNleG8gZSBkYSBzb2JyZXZpdmVuY2lhCnByb3AudGFibGUodGFibGUodHJhaW4kU2V4LCB0cmFpbiRTdXJ2aXZlZCksIDEpICMgMSBwYXJhIGxpbmhhLCAyIHBhcmEgY29sdW5hCmBgYAoKTG9nbywgY29uY2x1aW1vcyBxdWUgYm9hIHBhcnRhIGRhcyBtdWxoZXJlcyBzb2JyZXZpdmVyYW0sIGxvZ28sIGFvIGNvbXBsZXRhbmRvIG9zIGRhZG9zLCB0ZW1vczsKCmBgYHtyfQogICN0ZXN0JFN1cnZpdmVkIDwtIHJlcCgwLCA0MTgpICMgQWRpY2lvbmEgdW1hIG5vdmEgY29sdW5hIG5vcyBkYWRvcwogIHRlc3QkU3Vydml2ZWQgPC0gIDAgCiAgdGVzdCRTdXJ2aXZlZFt0ZXN0JFNleCA9PSAnZmVtYWxlJ10gPC0gIDEgCmBgYAoKCgoKCgoKCgpQYXJhIHNhbHZhciBvIGNzdiwgdGVtb3M6CgpgYGB7cn0KICBzdWJtaXQgPC0gZGF0YS5mcmFtZShQYXNzZW5nZXJJZCA9IHRlc3QkUGFzc2VuZ2VySWQsIFN1cnZpdmVkID0gdGVzdCRTdXJ2aXZlZCkKICB3cml0ZS5jc3Yoc3VibWl0LCBmaWxlID0gInRoZXlhbGxwZXJpc2guY3N2Iiwgcm93Lm5hbWVzID0gRkFMU0UpCmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KIyBJbnNlcmluZG8gYmlibGlvdGVjYXMKCmxpYnJhcnkodGlkeXZlcnNlKSAjRnVuw6fDtWVzIGRlIHV0aWxpZGFkZSBnZXJhaXMgcGFyYSBEYXRhIFNjaWVuY2UKbGlicmFyeShycGFydCkgIyBwYXJhIGFydm9yZXMgZGUgcmVncmVzc8OjbwpsaWJyYXJ5KHJhbmRvbUZvcmVzdCkgIyBwYXJhIFJhbmRvbSBGb3Jlc3RzCmBgYAoKCgoKYGBge3J9CiNsZW5kbyBkYWRvcwp0ZXN0IDwtIHJlYWRfY3N2KCJkYXRhL3Rlc3QuY3N2IikgI09zIGRhZG8KdHJhaW4gPC0gcmVhZF9jc3YoImRhdGEvdHJhaW4uY3N2IikgI09zIGRhZG9zCgoKYGBgCgpBbmFsaXNhbmRvIGFzIGluZm9ybWHDp8O1ZXM6CgpgYGB7cn0KI3JlbGFjaW9hbmRhIG9zIGRhZG9zIHNleG8gZSBkYSBzb2JyZXZpdmVuY2lhCnByb3AudGFibGUodGFibGUodHJhaW4kU2V4LCB0cmFpbiRTdXJ2aXZlZCksIDEpICMgMSBwYXJhIGxpbmhhLCAyIHBhcmEgY29sdW5hCmBgYAoKTG9nbywgY29uY2x1aW1vcyBxdWUgYm9hIHBhcnRhIGRhcyBtdWxoZXJlcyBzb2JyZXZpdmVyYW0sIGxvZ28sIGFvIGNvbXBsZXRhbmRvIG9zIGRhZG9zLCB0ZW1vczsKCmBgYHtyfQogICN0ZXN0JFN1cnZpdmVkIDwtIHJlcCgwLCA0MTgpICMgQWRpY2lvbmEgdW1hIG5vdmEgY29sdW5hIG5vcyBkYWRvcwogIHRlc3QkU3Vydml2ZWQgPC0gIDAgCiAgdGVzdCRTdXJ2aXZlZFt0ZXN0JFNleCA9PSAnZmVtYWxlJ10gPC0gIDEgCmBgYAoKCmBgYHtyfQphZ2dyZWdhdGUgKFN1cnZpdmVkIH4gIENoaWxkICArIFNleCAsIGRhdGEgPSB0cmFpbiAsIEZVTiA9IAogICAgICAgICAgICAgZnVuY3Rpb24oeCkgewogICAgICAgICAgICAgICBzdW0oeCkgLyBsZW5ndGgoeCkKICAgICAgICAgICAgIH0pIApgYGAKCgpgYGB7cn0KCmBgYAoKCgpgYGB7cn0KdHJhaW4kQ2hpbGQgPC0gMAp0cmFpbiRDaGlsZFsgdHJhaW4kQWdlIDwgMTggXSA8LSAxCmBgYAoKCgoKUGFyYSBzYWx2YXIgbyBjc3YsIHRlbW9zOgoKYGBge3J9CiAgc3VibWl0IDwtIGRhdGEuZnJhbWUoUGFzc2VuZ2VySWQgPSB0ZXN0JFBhc3NlbmdlcklkLCBTdXJ2aXZlZCA9IHRlc3QkU3Vydml2ZWQpCiAgd3JpdGUuY3N2KHN1Ym1pdCwgZmlsZSA9ICJ0aGV5YWxscGVyaXNoLmNzdiIsIHJvdy5uYW1lcyA9IEZBTFNFKQpgYGAKCg==</div>
 
 
 

@@ -37,9 +37,24 @@ Logo, concluimos que boa parta das mulheres sobreviveram, logo, ao completando o
 ```
 
 
+```{r}
+aggregate (Survived ~  Child  + Sex , data = train , FUN = 
+             function(x) {
+               sum(x) / length(x)
+             }) 
+```
+
+
+```{r}
+
+```
 
 
 
+```{r}
+train$Child <- 0
+train$Child[ train$Age < 18 ] <- 1
+```
 
 
 
